@@ -1,10 +1,11 @@
 package user;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class User {
+public class UserDAO {
     private Connection conn;
     private PreparedStatement pstmt;
     private ResultSet rs;
@@ -15,7 +16,7 @@ public class User {
             String dbID = "root";
             String dbPassword = "Mysql4266!";
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverMAnager.getConnection(dbURL, dbID, dbPassword);
+            conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
         } catch (Exception e) {
             e.printStackTrace();
         }
