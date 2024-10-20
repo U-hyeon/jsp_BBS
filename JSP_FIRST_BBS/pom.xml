@@ -17,5 +17,16 @@
   </dependencies>
   <build>
     <finalName>JSP_practice</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version> <!-- 적절한 버전으로 설정 -->
+        <configuration>
+          <source>8</source>  <!-- 또는 11, 17 등 더 높은 버전으로 설정 -->
+          <target>8</target>  <!-- 또는 11, 17 등 더 높은 버전으로 설정 -->
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
