@@ -142,4 +142,16 @@ public class BbsDAO {
         }
         return -1;
     }
+
+    public int delete(int bbsID) {
+        String SQL = "UPDATE BBS SET bbsAvailable = 0 WHERE bbsID = ?"; // 글 삭제시에도 표시만 안하고 DB에는 유지
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setInt(1, bbsID);
+            return pstmt.executeUpdate();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return -1; // db오류
+    }
 }
